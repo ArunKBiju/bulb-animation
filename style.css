@@ -9,11 +9,11 @@ html, body {
 }
 
 .toggle-button {
-  border: 2px solid transparent; /* Reserve space */
+  border: 2px solid transparent; 
 }
 
 .toggle-button.active {
-  border-color: #000; /* Now border appears without shifting layout */
+  border-color: #000;
 }
 
 
