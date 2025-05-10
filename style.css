@@ -2,8 +2,18 @@ body {
   background: #111;
   margin: 0;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
+
+.toggle-button {
+  border: 2px solid transparent; /* Reserve space */
+}
+
+.toggle-button.active {
+  border-color: #000; /* Now border appears without shifting layout */
+}
+
 
 .container {
   position: relative;
