@@ -1,9 +1,11 @@
-body {
+html, body {
   background: #111;
-  margin: 0;
-  height: 100vh;
   overflow-x: hidden;
   overflow-y: hidden;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .toggle-button {
@@ -153,3 +155,15 @@ body {
   pointer-events: auto;
 }
 
+main {
+  flex: 1;
+}
+
+.site-footer {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
