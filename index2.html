@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neon Button with Real Reflection</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(120deg, #0a0a0a, #1a1a1a, #0a0a0a);
+      background-size: 300% 300%;
+      animation: flow 10s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes flow {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 100% 100%; }
+    }
+
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .button-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .neon-button {
+      padding: 30px 80px;
+      font-size: 20px;
+      color: rgb(0, 255, 0);
+      background: transparent;
+      border: 2px solid rgb(255, 255, 255);
+      border-radius: 10px;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgb(47, 255, 0), 0 0 30px rgb(4, 255, 0) inset;
+      transition: all 0.3s ease;
+      z-index: 2;
+      position: relative;
+    }
+
+    .button-wrapper:hover .neon-button {
+      box-shadow: 0 0 30px rgb(249, 0, 0), 0 0 60px rgb(255, 0, 0) inset;
+      transform: scale(1.05);
+      color: rgb(255, 0, 0);
+    }
+
+    
+    .button-wrapper:hover::after {
+      box-shadow: 0 0 50px rgba(255, 0, 0, 0.6), 0 0 100px rgba(255, 0, 0, 0.4) inset;
+    }
+
+    .reflection {
+      transform: scaleY(-1);
+      opacity: 0.3;
+      margin-top: -10px;
+      filter: blur(4px);
+      mask-image: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="center">
+    <div class="button-wrapper">
+      <button class="neon-button">Enter</button>
+    </div>
+  </div>
+</body>
+</html>

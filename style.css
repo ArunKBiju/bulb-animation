@@ -1,0 +1,145 @@
+body {
+  background: #111;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.bulb-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform-origin: top center;
+  animation: swing 4s ease-in-out infinite;
+  z-index: 1;
+}
+
+.wire {
+  position: absolute;
+  top: 0;
+  left: 0%;
+  width: 2px;
+  height: 35vh;
+  background: #888;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+
+.bulb {
+  position: absolute;
+  top: 35vh;
+  left: -100px;
+  height: 200px;
+  width: auto;
+  z-index: 2;
+  pointer-events: none;
+  transition: filter 0.3s ease-in-out;
+}
+
+.bulb.on {
+  filter: drop-shadow(0 70px 20px #ffe600)  drop-shadow(0 70px 50px #ffe600b5) drop-shadow(0 70px 20px #ffe600) drop-shadow(0 70px 90px #ffe600) drop-shadow(0 70px 100px #ffe600b5);
+}
+
+.bulb.off {
+  filter: none;
+}
+
+.light {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.3;
+  transition: opacity 0.3s ease-in-out;
+  filter: blur(40px);
+}
+
+
+
+@keyframes swing {
+  0% { transform: rotate(-45deg); }
+  50% { transform: rotate(45deg); }
+  100% { transform: rotate(-45deg); }
+}
+
+#toggleBtn {
+  position: absolute;
+  top: 60%;
+  right: 40px;
+  padding: 15px 30px;
+  background: linear-gradient(145deg, #000, #444);
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #000;
+  transition: box-shadow 0.3s;
+  z-index: 3;
+}
+
+#toggleBtn.glow {
+  box-shadow: 0 0 10px yellow, 0 0 20px yellow;
+}
+
+.btn {
+  position: absolute;
+  right: 50%;
+  top: 80%; 
+  padding: 12px 24px;
+  background: linear-gradient(to bottom, #222, #000);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: inset 0 1px 3px rgba(255,255,255,0.1),
+              0 0 10px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.btn.glow {
+  background: linear-gradient(to bottom, #ffff99, #222);
+  box-shadow:
+    0 -2px 10px rgba(255, 255, 153, 0.8),
+    0 4px 20px rgba(255, 255, 0, 0.6),
+    inset 0 1px 2px rgba(255,255,255,0.3);
+  color: #fffacd;
+}
+
+
+#glossy-btn {
+  position: absolute;
+  top: 70%;
+  right: 42%;
+  padding: 25px 50px;
+  background: #111;
+  color: #111;
+  border: none;
+  border-radius: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: box-shadow 0.3s, opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+#glossy-btn.visible {
+  opacity: 10;
+  pointer-events: auto;
+}
+
