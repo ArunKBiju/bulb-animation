@@ -40,7 +40,7 @@ setInterval(() => {
   }
 });
 
-const footer = document.querySelector('footer');
+const footer = document.querySelector('footer2');
 const homeSection = document.getElementById('home');
 if (footer && homeSection) {
   new IntersectionObserver(entries => {
