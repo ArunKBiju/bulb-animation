@@ -2,6 +2,7 @@ const bulb = document.getElementById('bulbImg');
 const light = document.querySelector('.light');
 const toggleBtn = document.getElementById('toggleBtn');
 const glossyBtn = document.getElementById('glossy-btn');
+const footer2 = document.getElementById('footer2');
 
 let isOn = false;
 
@@ -40,12 +41,8 @@ setInterval(() => {
   }
 });
 
-const footer2 = document.querySelector('footer2');
-const homeSection = document.getElementById('home');
-if (footer2 && homeSection) {
-  new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      footer2.style.backgroundColor = entry.isIntersecting ? 'transparent' : '#FFFFFF';
-    });
-  }, { threshold: 0.1 }).observe(homeSection);
+function hideFooter() {
+  if (footer2) {
+    footer2.style.display = 'none';
+  }
 }
