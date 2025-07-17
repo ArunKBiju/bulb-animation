@@ -40,12 +40,12 @@ setInterval(() => {
   }
 });
 
-const footer = document.querySelector('footer2');
+const footer2 = document.querySelector('footer2');
 const homeSection = document.getElementById('home');
-if (footer && homeSection) {
+if (footer2 && homeSection) {
   new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      footer.style.backgroundColor = entry.isIntersecting ? 'transparent' : '#FFFFFF';
+      footer2.style.backgroundColor = entry.isIntersecting ? 'transparent' : '#FFFFFF';
     });
   }, { threshold: 0.1 }).observe(homeSection);
 }
