@@ -39,3 +39,13 @@ setInterval(() => {
     glossyBtn.classList.remove('glow');
   }
 });
+
+const footer = document.querySelector('footer');
+const homeSection = document.getElementById('home');
+if (footer && homeSection) {
+  new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      footer.style.backgroundColor = entry.isIntersecting ? 'transparent' : '#FFFFFF';
+    });
+  }, { threshold: 0.1 }).observe(homeSection);
+}
