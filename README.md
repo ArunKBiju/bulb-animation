@@ -46,6 +46,11 @@ This project blends animation and interactivity to simulate a dramatic light rev
 
 ---
 
+## Demo
+![Image](https://github.com/user-attachments/assets/c14c2b25-5621-4f25-b6d9-45650f519b7e)
+
+---
+
 ## Credits
 
 Developed by **Arun K Biju**  
